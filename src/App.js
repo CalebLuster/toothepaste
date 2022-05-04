@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  // const number = 0
+  const [number, setNumber] = useState(0)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <p>{number}</p>
+    <button className="button" onClick={() => setNumber(prevNumber => prevNumber - 1)}>Minus One</button>
+    <button className="button" onClick={() => setNumber(prevNumber => prevNumber * 2)}>Double</button>
+    <button className="button" onClick={() => setNumber(prevNumber => prevNumber / 2)}>Cut Half</button>
+    <button className="button" onClick={() => setNumber(prevNumber => prevNumber + 1)}>Add One</button>
     </div>
   );
 }
